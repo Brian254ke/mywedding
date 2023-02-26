@@ -15,7 +15,7 @@ const Video =()=>{
   export default Video;*/
 import ReactPlayer from 'react-player';
 import React, { useRef } from 'react';
-const VIDEO_PATH = 'https://youtu.be/KsrleSBbxns';
+const VIDEO_PATH = 'https://youtu.be/HPmOAbgOQqg';
 function Video() {
    const playerRef = useRef(null);
    return (
