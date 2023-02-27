@@ -1,28 +1,25 @@
-import logo from './logo.svg';
+import { useState } from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Video from './components/Video';
 import Footer from "./components/Footer";
-
+import Empty from "./components/Empty";
+import MyButton from './components/MyButton';
 function App() {
+  const [canView,check] = useState(false);
+  const checkAuthentication = () => {
+    check(!canView);
+  };
+  function confirmed() {
+    checkAuthentication();
+  }
   return (
     <div>
-      <img
-          src={logo}
-          alt="logo"
-          style={{
-            width: "60px",
-            height: "60px",
-            borderRadius: "50%",
-            display: "block",
-            marginTop: "20px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            alignItems: "center",
-          }}/>
       <Header/>
       <Body/>
       <Video/>
+      <MyButton onClick={confirmed} text="Programme"/>
+      {canView ? (<Empty text="Friday 10th March 2023"/>) : ("")}
       <Footer/>
     </div>
   );
